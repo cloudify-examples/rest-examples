@@ -38,18 +38,18 @@ curl -X GET "<manager-ip>/api/v2.1/blueprints?_include=id,created_at"
 
 4) create deployments with inputs (for aws flavor=size/type of the instance):
 ```
-curl -X PUT -H "Content-Type: application/json" -d '{"inputs":{"image":"your-image-id","flavor":"your-flavor-id","agent_user":"your-user"}, "blueprint_id":"sample-blueprint"}' "<manager-ip>/api/v2.1/deployments/sample-deployment"
+curl -X PUT -H "Content-Type: application/json" -d '{"inputs":{"image":"your-image-id","flavor":"your-flavor-id","agent_user":"your-user"}, "blueprint_id":"sample-blueprint"}' "<manager-ip>/api/v2.1/deployments/sample-dep"
 ```
 
 5) detect if a deployment is already created:
 ```
-curl -X GET <manager-ip>/api/v2.1/deployments?id=sample-deployment&_include=id,created_at
+curl -X GET <manager-ip>/api/v2.1/deployments?id=sample-dep&_include=id,created_at
 ```
 
 6) detect if a deployment is in progress:
 
 ```
-curl -X GET "<manager-ip>/api/v2.1/executions/execution-id?deployment_id=sample-deployment&_include=id,status,created_at"
+curl -X GET "<manager-ip>/api/v2.1/executions/execution-id?deployment_id=sample-dep&_include=id,status,created_at"
 ```
 
 7) get deployments list:
@@ -59,15 +59,15 @@ curl -X GET "<manager-ip>/api/v2.1/deployments?blueprint_id=sample-blueprint&_in
 
 8) get executions list:
 ```
-curl -X GET "<manager-ip>/api/v2.1/executions?deployment_id=sample-deployment&_include=id,status,workflow_id,created_at"
+curl -X GET "<manager-ip>/api/v2.1/executions?deployment_id=sample-dep&_include=id,status,workflow_id,created_at"
 ```
 
 9) execute workflows (install):
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"deployment_id":"sample-deployment","workflow_id":"install"}' "<manager-ip>/api/v2.1/executions"
+curl -X POST -H "Content-Type: application/json" -d '{"deployment_id":"sample-dep","workflow_id":"install"}' "<manager-ip>/api/v2.1/executions"
 ```
 
 10) cancel execution:
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"deployment_id":"sample-deployment","action":"cancel"}' "<manager-ip>/api/v2.1/executions/<execution-id>"
+curl -X POST -H "Content-Type: application/json" -d '{"deployment_id":"sample-dep","action":"cancel"}' "<manager-ip>/api/v2.1/executions/execution-id"
 ```

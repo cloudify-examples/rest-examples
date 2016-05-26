@@ -71,7 +71,7 @@ for deployment in deployments:
 
 8) get executions list:
 ```
-executions = client.executions.list(deployment_id='sample_dep',_include=['id','status','workflow_id','created_at'])
+executions = client.executions.list(deployment_id='sample-dep',_include=['id','status','workflow_id','created_at'])
 for execution in executions:
   print execution
 ```

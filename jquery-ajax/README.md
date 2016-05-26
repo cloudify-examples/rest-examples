@@ -107,7 +107,7 @@ $.ajax(settings).done(function (response) {
 var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "http://<manager-ip>/api/v2.1/executions/0fd86337-94fe-4981-9a10-b5eac04a9d0e?deployment_id=sample_dep&_include=id%2Cstatus%2Ccreated_at",
+  "url": "http://<manager-ip>/api/v2.1/executions/execution-id?deployment_id=sample-dep&_include=id%2Cstatus%2Ccreated_at",
   "method": "GET",
   "headers": {"content-type": "application/json"},
   "processData": false

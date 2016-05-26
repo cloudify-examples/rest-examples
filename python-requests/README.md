@@ -111,7 +111,7 @@ print(response.text)
 
 10) cancel execution:
 ```
-url = "http://185.98.149.215/api/v2.1/executions/execution-id"
+url = "http://<manager-ip>/api/v2.1/executions/execution-id"
 payload = "{\"deployment_id\":\"sample-deployment\",\"action\":\"cancel\"}"
 headers = {'content-type': "application/json"}
 response = requests.request("POST", url, data=payload, headers=headers)

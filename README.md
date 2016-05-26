@@ -1,7 +1,7 @@
 ## Description ##
 
 Examples of how to make rest calls to Cloudify's rest service using:
-+ curl
++ cURL
 + PythonClient
 + Python requests
 + JQuery AJAX
