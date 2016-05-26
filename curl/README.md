@@ -1,6 +1,6 @@
 ## Description ##
 
-An example of how to make rest calls using curl.
+An example of how to make rest calls using cURL.
 See http://docs.getcloudify.org/api/#cloudify-rest-api-v2
 
 ## Goal ##
@@ -15,13 +15,13 @@ examples for the following tasks:
 
 ## Prerequisites ##
 
-+ OpenStack/AWS manager
++ Cloudify manager
 
 ## Instructions ##
 
 open your terminal and cd /manager/
 
-1) upload a blueprint to the manager (make sure the blueprint you upload match your manager openstack/aws):
+1) upload a blueprint to the manager (make sure the blueprint you upload matches your manager):
 ```
 curl -X PUT "<manager-ip>/api/v2.1/blueprints/sample-blueprint?application_file_name=blueprint-name.yaml&blueprint_archive_url=https://url/to/archive/master.zip"
 ```
@@ -36,7 +36,7 @@ curl -X DELETE <manager-ip>/blueprints/sample-blueprint
 curl -X GET "<manager-ip>/api/v2.1/blueprints?_include=id,created_at"
 ```
 
-4) create deployments with inputs (for aws flavor=size/type of the instance):
+4) create deployments with inputs (openstack example. make sure your inputs matches your blueprint):
 ```
 curl -X PUT -H "Content-Type: application/json" -d '{"inputs":{"image":"your-image-id","flavor":"your-flavor-id","agent_user":"your-user"}, "blueprint_id":"sample-blueprint"}' "<manager-ip>/api/v2.1/deployments/sample-dep"
 ```

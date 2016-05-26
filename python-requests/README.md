@@ -15,8 +15,8 @@ examples for the following tasks:
 
 ## Prerequisites ##
 
-+ OpenStack/AWS manager
-+ make sure your cloudify-rest-client is up-to-date (run -> pip install cloudify-rest-client==3.4)
++ Cloudify manager
++ Make sure your cloudify-rest-client is up-to-date (run -> pip install cloudify-rest-client==3.4)
 + Python version>=2.7.10
 
 ## Instructions ##
@@ -27,7 +27,7 @@ all tasks should start with-
 import requests
 ```
 
-1) upload a blueprint to the manager (make sure the blueprint you upload match your manager openstack/aws):
+1) upload a blueprint to the manager (make sure the blueprint you upload matches your manager):
 ```
 url = "http://<manager-ip>/api/v2.1/blueprints/sample-blueprint"
 querystring = {"application_file_name":"sample-blueprint.yaml","blueprint_archive_url":"https://url/to/archive/master.zip"}
@@ -53,7 +53,7 @@ response = requests.request("GET", url, headers=headers, params=querystring)
 print(response.text)
 ```
 
-4) create deployments with inputs (for aws flavor=size/type of the instance):
+4) create deployments with inputs (openstack example. make sure your inputs matches your blueprint):
 ```
 url = "http://<manager-ip>/api/v2.1/deployments/sample-deployment"
 payload = "{\"inputs\":{\"image\":\"your-image-id\",\"flavor\":\"your-flavor-id\",\"agent_user\":\"your-user\"}, \"blueprint_id\":\"sample-blueprint\"}"

@@ -1,6 +1,6 @@
 ## Description ##
 
-An example of how to make rest calls using jquery AJAX.
+An example of how to make rest calls using JQuery AJAX.
 
 ## Goal ##
 
@@ -14,12 +14,12 @@ examples for the following tasks:
 
 ## Prerequisites ##
 
-+ OpenStack/AWS manager
++ Cloudify manager
 + JQuery AJAX installed
 
 ## Instructions ##
 
-1) upload a blueprint to the manager (make sure the blueprint you upload match your manager openstack/aws):
+1) upload a blueprint to the manager (make sure the blueprint you upload matches your manager):
 ```
 var settings = {
   "async": true,
@@ -67,7 +67,7 @@ $.ajax(settings).done(function (response) {
 });
 ```
 
-4) create deployments with inputs (for aws flavor=size/type of the instance):
+4) create deployments with inputs (openstack example. make sure your inputs matches your blueprint):
 ```
 var settings = {
   "async": true,
