@@ -19,8 +19,6 @@ examples for the following tasks:
 
 ## Instructions ##
 
-open your terminal and cd /manager/
-
 1) upload a blueprint to the manager (make sure the blueprint you upload matches your manager):
 ```
 curl -X PUT "<manager-ip>/api/v2.1/blueprints/sample-blueprint?application_file_name=blueprint-name.yaml&blueprint_archive_url=https://url/to/archive/master.zip"
